@@ -1,0 +1,8 @@
+parameters to take:
+
+features (array)
+case (string)
+email (string)
+language (string de/en/fr)
+
+output as /jobs/(randomstring)/job.txt
