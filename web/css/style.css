@@ -1,0 +1,43 @@
+
+/* navigation bar styles */
+body {
+	
+}
+
+
+#bar-titles {
+	width: 80%;
+	position: center;
+}
+#bar-titles li {
+	width: 13.33%;
+	color: #FFFFFF;
+	visibility: visible;
+
+}
+
+#progress-bar {
+	width: 100%;
+	height: 60px;
+	background: #80ffcc;
+}
+li {
+		display: inline-block;
+		width: 10%;
+		color: #ffffff;
+
+	}
+#segment {
+ background-color: #ffffff;
+ display: inline-block;
+
+
+}
+
+#segment: last-child {
+
+}
+
+#segment-active {
+	background-color: #1a8cff;
+}
