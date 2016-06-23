@@ -1,3 +1,4 @@
+@progressheight:60px;
 * {
   margin: 0px;
   padding: 0px;
@@ -6,23 +7,18 @@
 
 .progressbar {
   width: 100%;
-  height: 139px;
+  height: @progressheight;
   border: 2px solid black;
 
 }
 .progress {
-  line-height: 139px;
+  line-height: @progressheight;
   background: url("../images/arrow.png") no-repeat center right;
-  width: 20%;
+  width: 15%;
+  text-align: center;
   display: inline-block;
+  padding-right: 22px;
 }
-.progress:first {
-  background: none;
-}
-.full {
-  background: red;
-}
-.progress:first-of-type,
 .progress:last-of-type
  {
   background: none
