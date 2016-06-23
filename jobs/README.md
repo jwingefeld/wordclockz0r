@@ -1,4 +1,6 @@
-# LetterGen
+# Jobs
+
+## LetterGen
 
 usage python lettergen.py your words go here
 
