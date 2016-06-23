@@ -2,7 +2,7 @@
 
 ## LetterGen
 
-usage python lettergen.py your words go here
+usage: python lettergen.py your words go here
 
 outputs word search and solution
 
