@@ -15,7 +15,8 @@
     //grab variables from POST
     //echo $_POST['features'];
     $features = $_POST['features'];
-    $case = $_POST['case'];
+    $frameSize = $_POST['frameSize'];
+    $font = $_POST['font'];
     $email = $_POST['email'];
     
     
@@ -27,7 +28,7 @@
         mkdir('../jobs/'.$newjobdir, 0755, true);
         //echo 'directory '.$newjobdir.' created';
         
-    $arr = array($features,"case"=>$case,"email"=>$email);
+    $arr = array($features,"frameSize"=>$frameSize,"font"=>$font,"email"=>$email);
     $jsonJobString = json_encode($arr);
     $file = $newjobdir.'/jobs.json';
     file_put_contents('../jobs/'.$file, $jsonJobString);
