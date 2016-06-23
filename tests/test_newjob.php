@@ -7,9 +7,9 @@
 
 	<form name="test" action="../web/newjob.php" method="POST">
 	<input type="hidden" name="features"  value="time">
-<input type="hidden" name="case"  value="test">
-<input type="hidden" name="email" values"test@testmail.com">
- <input type="submit" value="Submit!"> 
+	<input type="hidden" name="case"  value="test">
+	<input type="hidden" name="email" value="test@testmail.com">
+ 	<input type="submit" value="Submit!"> 
 	</form>
 </body>
 </html>

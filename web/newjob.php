@@ -1,6 +1,9 @@
 <?php
 
     /*creates new directory in jobs and puts a JSON encoded .txt in it
+     * it returns status success and the job id or an error
+     *
+     
      $features = array(
             "time"=>"test_time",
             "date"=>"2016-06-23",
@@ -22,16 +25,20 @@
     
     if (!file_exists($newjobdir)) {
         mkdir('../jobs/'.$newjobdir, 0755, true);
-        echo 'directory '.$newjobdir.' created';
+        //echo 'directory '.$newjobdir.' created';
         
     $arr = array($features,"case"=>$case,"email"=>$email);
     $jsonJobString = json_encode($arr);
-    $file = $newjobdir.'/jobs.txt';
+    $file = $newjobdir.'/jobs.json';
     file_put_contents('../jobs/'.$file, $jsonJobString);
+        
+        $result = array("status"=>"success","jobid"=>$newjobdir);
+        echo json_encode($result);
+    //echo "<br>\n";
+    //echo 'file '.$file.' created';
+    } else {
+        echo "error::jobid directory exists";
     }
-    echo "<br>\n";
-    echo 'file '.$file.' created';
-    
   
     
 ?>
