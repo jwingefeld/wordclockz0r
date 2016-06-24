@@ -10,5 +10,11 @@ sinclude params.mk
 %.dxf: %.scad params.mk
 	openscad $(PARAMS) -o $@ $<
 
-%.png: %.scad params.mk
+%.svg: %.scad params.mk
 	openscad $(PARAMS) -o $@ $<
+
+%.png: %.scad params.mk
+	openscad $(PARAMS) -o $@ $< --camera=0,0,0,0,0,0,0 --autocenter --viewall
+
+%.zip: %.stl %.dxf %.png %.svg
+	zip $@ $^

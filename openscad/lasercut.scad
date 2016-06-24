@@ -28,7 +28,6 @@ module faceplate (frameSize = frameSize, border = border, font_size = font_size)
 
 
 
-
 if (3D == true) linear_extrude(height=height) faceplate();
 else faceplate();
 
