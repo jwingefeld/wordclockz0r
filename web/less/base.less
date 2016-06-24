@@ -43,3 +43,48 @@ body {
   background: rgba(255,255,255,.8);
   min-height: 600px;
 }
+.segments {
+  width: 900px;
+  margin: auto;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  height: 600px - 60px;
+  .segmentwrapper {
+    width: 900px * 5;
+    position: relative;
+  }
+  .segment {
+    width: 900px;
+    float: left;
+    height: 580px - 60px;
+    font-size: 18px;
+    padding-top: 20px;
+  }
+  #welcome {
+    background: url("../images/xzibit.png") no-repeat right bottom;
+    .quote {
+      font-style: italic;
+      display: block;
+      padding-top:  200px;
+
+    }
+  }
+  #font {
+    .option {
+      float: left;
+      width: 49%;
+    }
+
+    text-align: center;
+  }
+  .button {
+    background: #193DAA;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0px;
+    margin-top: 20px;
+    color: white;
+
+  }
+
+}
