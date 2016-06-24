@@ -1,4 +1,4 @@
-<?php require("config.inc.php");
+<?php require("config.inc.php"); ?>
 
 <!doctype html>
 
@@ -31,12 +31,23 @@
     		<div id="font" class="segment">
           <div class="title">Please select the font of your wordclock:</div>
           <?php
-
-          echo "<div class=\"option\"><label for=\"font-$fontname\"><img src=\"images/lang-de.png\" /></label><br /><input type=\"radio\" name=\"lang\" id=\"lang-de\" value=\"de\"/><label for=\"lang-de\"> Deutsch</label><br /></div>";
+          for ($i=0;$i <= 5; $i++) {
+            echo "<div class=\"option\"><label for=\"font-$i\"><img src=\"images/lang-$i.png\" /></label><br /><input type=\"radio\" name=\"font\" id=\"font-$i\" value=\"$i\"/><label for=\"font-$i\"></label><br /></div>";
+          }
           ?>
         </div>
     		<div id="features" class="segment">
-          3
+          <div class="title">Please select the features of your wordclock:</div>
+
+          <?php
+          $label="time";
+          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" disabled=disabled selected=selected /><label for=\"feature-$label\"> Time</label><br /></div>";
+          $label="date";
+          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" disabled=disabled selected=selected /><label for=\"feature-$label\"> Date</label><br /></div>";
+          $label="moonphase";
+          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" disabled=disabled selected=selected /><label for=\"feature-$label\"> Moonphase</label><br /></div>";
+
+           ?>
         </div>
     		<div id="size" class="segment">
           4

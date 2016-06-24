@@ -1,6 +1,5 @@
 <?php
-$fontnames =  array("fontname.ttf" => "Geile Schriftart",
-
+$fontnames =  array("fontname.ttf" => "Geile Schriftart"
 );
 
 
