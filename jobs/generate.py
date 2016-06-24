@@ -98,6 +98,7 @@ def generate(array_in, min_size):
             side_len = side_len+1
 
     print("\n Done. Size is: " + str(side_len) + "\n")
+    return string
     print(string)
 
 if __name__ == '__main__':
