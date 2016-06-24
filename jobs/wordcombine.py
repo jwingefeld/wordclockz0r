@@ -33,7 +33,8 @@ def combine_words(words,max_len=100,pref_len=-1):
         if max_bval > max_aval:
             max_a = [a,max_b]
             max_aval = max_bval
-
+    if len(words) <= 1:
+        return []
     word_a = words[max_a[0]]
     word_b = words[max_a[1]]
     #print("combining " + word_a + " and " + word_b)

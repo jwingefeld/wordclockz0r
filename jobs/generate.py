@@ -1,3 +1,6 @@
+#i am a machine that converts club mate into spaghetti code
+
+
 from wordcombine import combine_words
 from BinPacking import pack
 
@@ -5,7 +8,7 @@ import random
 human_readable = False
 letters = "abcdefghijklmnopqrstuvwxyz"
 
-def generate(array_in, min_size):
+def generate(array_in, min_size, oversize):
     i = 0
     array = array_in
     biggest_word = max(array, key=len)
@@ -20,7 +23,7 @@ def generate(array_in, min_size):
             #for c in array[a+1:b]:
                 #print(c)
             #print("combining")
-            combined = combine_words(array[a+1:b],len(biggest_word)+2,len(biggest_word))
+            combined = combine_words(array[a+1:b],len(biggest_word)+oversize,len(biggest_word))
             #for c in combined:
                 #print c
             del array[a+1:b-1]
@@ -32,7 +35,7 @@ def generate(array_in, min_size):
 
     biggest_word = max(array, key=len)
     #print("New Biggest Word: " + biggest_word)
-
+    #print("Len Biggest Word: " + str(len(biggest_word)))
     a = 0
     while a < len(array):
         if array[a] == '[':
@@ -48,6 +51,7 @@ def generate(array_in, min_size):
         a = a + 1
 
     letter_sum = 0
+    side_len = 0
     for a in array:
         letter_sum = letter_sum + len(a)
         #print("letter_sum = " + str(letter_sum))
@@ -58,15 +62,16 @@ def generate(array_in, min_size):
             #print("n = " + str(n))
         side_len = n
         #print("side_len: " + str(side_len))
-    else:
+    if side_len < len(biggest_word):
         side_len = len(biggest_word)
+        #print("side len set to biggest word: " + str(side_len))
 
-    if side_len < min_size:
+    if side_len < int(min_size):
         side_len = int(min_size)
-
+        #print("side len set to min size: " + str(side_len))
     #for a in array:
         #print(a)
-
+    #print("side len: " + str(side_len))
     success = False
     while not success:
         row = 0
@@ -119,8 +124,8 @@ def generate(array_in, min_size):
     if human_readable:
         for i in range(side_len):
             print(string[side_len*i:side_len*i+side_len])
-    else:
-        print(string)
+    #else:
+        #print(string)
 
     return string
 
@@ -148,4 +153,4 @@ def reorder(array, max_size):
 
 if __name__ == '__main__':
     import sys
-    generate(sys.argv[2:],int(sys.argv[1]))
+    generate(sys.argv[2:],int(sys.argv[1]),1)
