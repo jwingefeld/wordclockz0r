@@ -2,9 +2,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_executable(taskserver
 	taskserver.cpp
-	json_cst.cpp
-	json_lex.cpp
-	json_parse.cpp)
+	json_cst.cpp json_cst.hpp
+	json_lex.cpp json_lex.hpp
+	json_parse.cpp json_parse.hpp)
 
 include_directories(.)
 
