@@ -105,7 +105,7 @@ def generate(array_in, min_size, oversize):
                     row = row+1
                     for i in range(col,side_len):
                         string = string + random.choice(letters)
-                    string = string + "\n" #remove this later
+                    #string = string + "\n" #remove this later
                     col = 0
                 string = string + a
                 col = col + len(a)
@@ -118,7 +118,7 @@ def generate(array_in, min_size, oversize):
                 for j in range(col, side_len):
                     string = string + random.choice(letters)
                 col = 0
-                string = string + "\n" #remove this too
+                #string = string + "\n" #remove this too
         else:
             #print("failed side_len = "+ str(side_len))
             side_len = side_len+1
