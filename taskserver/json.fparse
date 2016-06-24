@@ -1,0 +1,20 @@
+json: value;
+
+value:	-false_value-	"false" |
+	-true_value-	"true" |
+	-null_value-	"null" |
+	-object_value-	object |
+	-array_value-	array |
+	-number_value-	NUMBER |
+	-string_value-	STRING;
+
+
+object: "{" member ( "," member ) * "}";
+
+member: STRING ":" value;
+
+array: "[" value ( "," value ) * "]";
+
+NUMBER: /-?(0|[1-9][0-9]*)(\.[0-9]+)?(e(\+|-)?[0-9]+)?/;
+
+STRING: /"([^\\"]|\\["\\/bfnrt])*"/;
