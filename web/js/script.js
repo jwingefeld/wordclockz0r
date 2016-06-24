@@ -1,4 +1,4 @@
 function switchto(num) {
-  $('#segments').animate( { scrollLeft: 900*num }, 1000);
+  $('#segments').animate( { scrollLeft: 900*num }, 300);
 
 }
