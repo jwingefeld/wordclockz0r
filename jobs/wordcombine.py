@@ -1,4 +1,4 @@
-def combine_words(words):
+def combine_words(words,max_len=100):
     #print("\n")
     #for w in words:
     #    print(w)
@@ -14,7 +14,11 @@ def combine_words(words):
             while (i < len(words[a]) and i < len(words[b])):
                 i=i+1
                 if words[a][:i] == words[b][-i:] or words[a][-i:] == words[b][:i]:
-                    max_i = i
+                    #skip the match detection if the combination is too large
+                    if (len(words[a]) + len(words[b]) - i) <= max_len:
+                        max_i = i
+                    #else:
+                        #print("Max size reached, ignoring match.")
             if max_i > max_bval:
                 max_bval = max_i
                 max_b = b
@@ -32,20 +36,20 @@ def combine_words(words):
     elif word_b[:max_aval] == word_a[-max_aval:]:
         combined = word_a + word_b[max_aval:]
     else:
-        print("\n")
-        for w in words:
-            print(w)
-        print("returning a list")
+        #print("\n")
+        #for w in words:
+            #print(w)
+        #print("returning a list")
         return words
 
     words.append(combined)
     del words[max_a[1]]
     del words[max_a[0]]
     if len(words) == 1:
-        print(words[0])
+        #print(words[0])
         return words[0]
     else:
-        return combine_words(words)
+        return combine_words(words,max_len)
 if __name__ == '__main__':
     import sys
     combine_words(sys.argv[1:])
