@@ -8,14 +8,14 @@
 
   <title>The Wordclockz0r</title>
   <link rel="stylesheet/less" type="text/css" href="less/base.less">
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
   <script src="js/less.min.js" type="text/javascript"></script>
   <script src="js/jquery-1.10.2.js"></script>
 
 </head>
 
 <body>
-
+<span onclick="switchto(6);">...</span>
 <script src="js/script.js" type="text/javascript"></script>
 <div class="content">
   <div class="progressbar">
@@ -41,20 +41,43 @@
 
           <?php
           $label="time";
-          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" disabled=disabled selected=selected /><label for=\"feature-$label\"> Time</label><br /></div>";
+          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" disabled=disabled checked=checked /><label for=\"feature-$label\"> Time</label><br /></div>";
           $label="date";
-          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" disabled=disabled selected=selected /><label for=\"feature-$label\"> Date</label><br /></div>";
+          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" /><label for=\"feature-$label\"> Date</label><br /></div>";
           $label="moonphase";
-          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" disabled=disabled selected=selected /><label for=\"feature-$label\"> Moonphase</label><br /></div>";
+          echo "<div class=\"option\"><label for=\"feature-$label\"><img src=\"images/feature-$label.png\" /></label><br /><input type=\"checkbox\" name=\"feature-$label\" id=\"feature-$label\" /><label for=\"feature-$label\"> Moonphase</label><br /></div>";
 
            ?>
         </div>
     		<div id="size" class="segment">
-          4
+
+        <?php
+        $label="23";
+        echo "<div class=\"option\"><label for=\"size-$label\"><img src=\"images/size-$label.png\" /></label><br /><input type=\"radio\" name=\"size\" id=\"size-$label\"/><label for=\"size-$label\"> Small</label><br /></div>";
+        $label="50";
+        echo "<div class=\"option\"><label for=\"size-$label\"><img src=\"images/size-$label.png\" /></label><br /><input type=\"radio\" name=\"size\" id=\"size-$label\"/><label for=\"size-$label\"> Big</label><br /></div>";
+        $label="100";
+        echo "<div class=\"option\"><label for=\"size-$label\"><img src=\"images/size-$label.png\" /></label><br /><input type=\"radio\" name=\"size\" id=\"size-$label\"/><label for=\"size-$label\"> HUGE</label><br /></div>";
+
+         ?>
         </div>
     		<div id="summary" class="segment">
-          5
+          <div id="message">Cool, everything is set. Are you ready?
+            <br /><input class="button" type="button" value="Yea!" onclick="submitform();"/>
+          </div>
         </div>
+        <div id="whatelse" class="segment">
+          <div class="title">What else did we do?</div>
+          <ul>
+            <li>We built a JSON parser in C++</li>
+            <li>We compiled some new debian packages</li>
+            <li>We uploaded them to the debian repositories</li>
+            <li>We milled a custom circuit board for the wordclock</li>
+            <li>We played minecraft</li>
+            <li>We LOL'd@Brexit</li>
+          </ul>
+        </div>
+
     	</div>
     </div>
   </form>

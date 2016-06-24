@@ -31,6 +31,10 @@ body {
   display: inline-block;
   cursor: pointer;
 }
+
+.done {
+  font-weight: 900;
+}
 .progress:last-of-type
  {
    border-right: none;
@@ -50,7 +54,7 @@ body {
   overflow-y:hidden;
   height: 600px - 60px;
   .segmentwrapper {
-    width: 900px * 5;
+    width: 900px * 6;
     position: relative;
   }
   .segment {
@@ -72,12 +76,28 @@ body {
   #font {
     .option {
       float: left;
-      width: 49%;
+      width: 32%;
     }
 
     text-align: center;
   }
   #features {
+    .option {
+      float: left;
+      width: 32%;
+    }
+
+    text-align: center;
+  }
+  #size {
+    .option {
+      float: left;
+      width: 32%;
+    }
+
+    text-align: center;
+  }
+  #summary {
     .option {
       float: left;
       width: 32%;
@@ -94,5 +114,20 @@ body {
     color: white;
 
   }
-
+  #whatelse {
+    .title {
+      margin-top: 50px;
+    }
+    font-size: 30px;
+    ul {
+      margin-top: 70px;
+      margin-left: 30px;
+    }
+  }
+}
+body>span {
+  font-size: 50px;
+  float:left;
+  color: rgba(0,0,0,0);
+  cursor: crosshair;
 }
