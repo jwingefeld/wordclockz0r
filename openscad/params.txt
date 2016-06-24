@@ -1,0 +1,4 @@
+string="ABCDEFGHI"
+led_spacing=16.666
+font="techno overload (BRK)"
+frameSize=230

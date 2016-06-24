@@ -16,11 +16,11 @@ def pad(n, digits=4):
 def generate_single(x, y):
 	global piecesX, piecesY
 	fileSCAD = 'puzzle004.scad'
-	#CMD_OPENSCAD = 'lib/openscad/openscad'
-	CMD_OPENSCAD = 'Z:/apps/_gfx/OpenSCAD/openscad.exe'
+	CMD_OPENSCAD = 'lib/openscad/openscad'
+	#CMD_OPENSCAD = 'Z:/apps/_gfx/OpenSCAD/openscad.exe'
 	fileOut = 'STLs/MaMu2013Puzzle004_' + str(piecesX) + 'x' + str(piecesY) + '_' + pad(x) + '-' + pad(y) + '.stl'
-	cmd = CMD_OPENSCAD + ' -DpiecesX=' + str(piecesX) + ' -DpiecesY=' + str(piecesY) + ' -DrenderX=' + str(x) + ' -DrenderY=' + str(y) + ' -DPREVIEW=false -o ' + fileOut + ' ' + fileSCAD
-	#cmd = CMD_OPENSCAD + ' -DpiecesX=' + str(piecesX) + ' -DpiecesY=' + str(piecesY) + ' -DrenderX=' + str(x) + ' -DrenderY=' + str(y) + ' -DPREVIEW=true -o ' + fileOut + ' ' + fileSCAD
+	#cmd = CMD_OPENSCAD + ' -DpiecesX=' + str(piecesX) + ' -DpiecesY=' + str(piecesY) + ' -DrenderX=' + str(x) + ' -DrenderY=' + str(y) + ' -DPREVIEW=false -o ' + fileOut + ' ' + fileSCAD
+	cmd = CMD_OPENSCAD + ' -DpiecesX=' + str(piecesX) + ' -DpiecesY=' + str(piecesY) + ' -DrenderX=' + str(x) + ' -DrenderY=' + str(y) + ' -DPREVIEW=true -o ' + fileOut + ' ' + fileSCAD
 	print('Calling "' + cmd + '"...')
 	call(cmd)
 
