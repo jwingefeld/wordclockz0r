@@ -1,11 +1,14 @@
 
 params.mk: params.txt
-	sed -e 's/^/-D/' -e '1s/^/PARAMS=/' $< | tr '\\n' ' ' >$@
+	sed -e 'sI^I-D'\'I -e 'sI$$I'\'I -e '1sI^IPARAMS=I' $< | tr '\\\n' ' ' >$@
 
 sinclude params.mk
 
-%.stl: %.scad
+%.stl: %.scad params.mk
 	openscad $(PARAMS) -o $@ $<
 
-%.png: %.scad
+%.dxf: %.scad params.mk
+	openscad $(PARAMS) -o $@ $<
+
+%.png: %.scad params.mk
 	openscad $(PARAMS) -o $@ $<

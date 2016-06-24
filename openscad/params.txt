@@ -1,4 +1,4 @@
-string="ABCDEFGHI"
-led_spacing=16.666
-font="techno overload (BRK)"
+string="ABCDEFGHIJKLMNOP"
+led_spacing= 16.666
+font="Crimescene Afterimage"
 frameSize=230

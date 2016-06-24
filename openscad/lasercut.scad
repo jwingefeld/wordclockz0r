@@ -8,12 +8,12 @@ font_size = led_spacing/2; // ich hab einfach mal angenommen, das font_size x2 a
 inner_square = (rows+1)*font_size*2;
 border = (frameSize - inner_square)/2;
 
-module lettermap (columns = columns, rows = rows, font_size = font_size, string = string, font = font) {
+module lettermap (columns = columns, rows = rows, font_size = font_size, string = string, font = font) { // muss bei nicht quadratischen layouts deutlich verändert werden
     for (i = [0:columns]) {
         for (j = [0:rows]) {
-            translate ([j*font_size*2,-i*font_size*2,0]) text(string[i*11+j], font = font, size = font_size, halign = "center", valign = "center");
-//            echo (i*11+j);
-//            echo (string[i*11+j]);
+            translate ([j*font_size*2,-i*font_size*2,0]) text(string[i*(columns+1)+j], font = font, size = font_size, halign = "center", valign = "center");
+//            echo (i*(columns+1)+j);
+//            echo (string[i*(columns+1)+j]);
         }
     }
 }
