@@ -1,4 +1,5 @@
-def combine_words(words,max_len=100):
+def combine_words(words,max_len=100,pref_len=-1):
+    #print("attempting to create words with max_size " + str(max_len))
     #print("\n")
     #for w in words:
     #    print(w)
@@ -16,7 +17,11 @@ def combine_words(words,max_len=100):
                 if words[a][:i] == words[b][-i:] or words[a][-i:] == words[b][:i]:
                     #skip the match detection if the combination is too large
                     if (len(words[a]) + len(words[b]) - i) <= max_len:
-                        max_i = i
+                        #bonus points if you exactly meet the preferred length
+                        if len(words[a]) + len(words[b]) - i == pref_len:
+                            max_i = 100
+                        else:
+                            max_i = i
                     #else:
                         #print("Max size reached, ignoring match.")
             if max_i > max_bval:
@@ -31,11 +36,19 @@ def combine_words(words,max_len=100):
 
     word_a = words[max_a[0]]
     word_b = words[max_a[1]]
-    if word_a[:max_aval] == word_b[-max_aval:]:
-        combined = word_b + word_a[max_aval:]
-    elif word_b[:max_aval] == word_a[-max_aval:]:
-        combined = word_a + word_b[max_aval:]
-    else:
+    #print("combining " + word_a + " and " + word_b)
+    i=0
+    matching = False
+    while i < len(word_a) and i < len(word_b):
+        if word_a[:i] == word_b[-i:]:
+            combined = word_b + word_a[i:]
+            matching = True
+        elif word_b[:i] == word_a[-i:]:
+            combined = word_a + word_b[i:]
+            matching = True
+        i = i+1
+
+    if not matching:
         #print("\n")
         #for w in words:
             #print(w)
