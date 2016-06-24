@@ -83,33 +83,41 @@ def generate(array_in, min_size, oversize):
         string = ""
         spaces = True
 
+
+
         for a in array:
             #print(a)
-            if(a == "["):
+            if a == "[":
                 spaces = False
                 #print("spaces disabled")
-                if col > 0 and col < side_len:
-                    #Add a final trailing space before space disabled block
-                    string = string + random.choice(letters)
-                    col = col+1
-            elif(a == "]"):
+            elif a == "]":
                 spaces = True
-                #print("spaces enabled")
-            else:
-                if spaces:
-                    if col > 0 and col < side_len:
-                        #print("adding a space!")
+                #print("spaces enabled + col= " + str(col))
+
+            if spaces and col > 0 and col < side_len:
+                #print("adding a space")
+                string = string + random.choice(letters)
+                col = col + 1
+            if a != "[" and a != "]":
+                #print("a is a word")
+                if col + len(a) > side_len:
+                    #print("word too long, adding spaces col = " + str(col)+ "str_len=" + str(side_len))
+                    #not enough room left on line for string
+                    for i in range(col, side_len):
                         string = string + random.choice(letters)
-                        col = col+1
-                if col+len(a) >  side_len:
-                    row = row+1
-                    for i in range(col,side_len):
-                        string = string + random.choice(letters)
-                    #string = string + "\n" #remove this later
+                        #print("random letter")
                     col = 0
+                    row = row + 1
+                    #string = string + "\n"
+                #print("printing a")
                 string = string + a
                 col = col + len(a)
-        #if adding spaces to our words pushed us above our limit, increase the size and try again
+                if(col > side_len):
+                    #string = string + "\n"
+                    col = 0
+                    row = row + 1
+
+       #if adding spaces to our words pushed us above our limit, increase the size and try again
         if row < side_len:
             success = True
             #fill up the rest of the space with garbage
@@ -118,15 +126,15 @@ def generate(array_in, min_size, oversize):
                 for j in range(col, side_len):
                     string = string + random.choice(letters)
                 col = 0
-                #string = string + "\n" #remove this too
+                string = string + "\n" #remove this too
         else:
             #print("failed side_len = "+ str(side_len))
             side_len = side_len+1
 
     #print("\n Done. Size is: " + str(side_len) + "\n")
-    if human_readable:
-        for i in range(side_len):
-            print(string[side_len*i:side_len*i+side_len])
+    #if human_readable:
+        #for i in range(side_len):
+            #print(string[side_len*i:side_len*i+side_len])
     #else:
         #print(string)
 
