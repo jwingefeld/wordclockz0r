@@ -1,6 +1,6 @@
 string = "ESOISTPFÜNFZEHNZWANZIGDREIVIERTELUWOCHENENDEVORNACHTAGLHALBRELFÜNFZWEISIEBENICAZEHNEUNIEVIEREDREINSSECHSELACHTZWÖLFERKUHR"; // wordclock
 led_spacing = 33.3/2; 
-font = "techno overload (BRK)"; // "Crimescene Afterimage";//font; kann der Font genau in der mitte gecentert werden?
+font = "Stockstill Solid"; //"techno overload (BRK)"; // "Crimescene Afterimage";//font; kann der Font genau in der mitte gecentert werden?
 frameSize = 230; // standard Ikea frame, andere wäre 500, oder 320
 3D = false; // z.B. für fräse
 height = 4; // auch für 3D
