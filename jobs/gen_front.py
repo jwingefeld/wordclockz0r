@@ -6,7 +6,9 @@ if __name__ == '__main__':
     arg2 = sys.argv[1]
 
     gens = []
-    for a in range(5):
-        gens.append(generate(arg1,arg2,a))
+    for a in range(7):
+        #for b in arg1:
+        #    print(b)
+        gens.append(generate(arg1[:],arg2[:],1))
 
     print(min(gens, key=len))

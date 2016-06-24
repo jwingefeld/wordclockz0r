@@ -14,6 +14,9 @@ def generate(array_in, min_size, oversize):
     biggest_word = max(array, key=len)
     #print("Biggest Word: " + biggest_word)
 
+    #for a in array:
+    #    print(a)
+
     a = 0
     while a < len(array):
         if array[a] == '[':
