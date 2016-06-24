@@ -5,7 +5,7 @@ params.mk: params.txt
 sinclude params.mk
 
 %.stl: %.scad params.mk
-	openscad $(PARAMS) -o $@ $<
+	openscad $(PARAMS) -D'3D=true' -o $@ $<
 
 %.dxf: %.scad params.mk
 	openscad $(PARAMS) -o $@ $<

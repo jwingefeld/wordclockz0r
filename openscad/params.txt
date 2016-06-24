@@ -2,3 +2,4 @@ string="ABCDEFGHIJKLMNOP"
 led_spacing= 16.666
 font="Crimescene Afterimage"
 frameSize=230
+3D=false
