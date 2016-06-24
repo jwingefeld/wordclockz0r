@@ -4,6 +4,7 @@
 
 int main(int, char **)
 {
+	using namespace taskserver::cst;
 	json_ptr job;
 	{
 		yyscan_t scanner;

@@ -25,12 +25,12 @@ add_custom_command(
 
 add_custom_command(
 	OUTPUT json_cst.hpp
-	COMMAND trees -o json_cst.hpp json.yy
+	COMMAND trees -n taskserver -n cst -o json_cst.hpp json.yy
 	MAIN_DEPENDENCY json.yy)
 
 add_custom_command(
 	OUTPUT json_cst.cpp
-	COMMAND trees -c -o json_cst.cpp json.yy
+	COMMAND trees -n taskserver -n cst -c -o json_cst.cpp json.yy
 	MAIN_DEPENDENCY json.yy)
 
 add_custom_command(

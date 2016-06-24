@@ -1,3 +1,5 @@
+%namespace taskserver::cst
+
 json: value;
 
 value:	-false_value-	"false" |
