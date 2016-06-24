@@ -1,3 +1,5 @@
+<?php require("config.inc.php");
+
 <!doctype html>
 
 <html lang="en">
@@ -28,9 +30,10 @@
         </div>
     		<div id="font" class="segment">
           <div class="title">Please select the font of your wordclock:</div>
-          <div class="option"><label for="font-"><img src="images/lang-de.png" /></label><br /><input type="radio" name="lang" id="lang-de" value="de"/><label for="lang-de"> Deutsch</label><br /></div>
-          <div class="option"><label for="lang-en"><img src="images/lang-en.png" /></label><br /><input type="radio" name="lang" id="lang-en" value="en"/><label for="lang-en"> English</label><br /></div>
+          <?php
 
+          echo "<div class=\"option\"><label for=\"font-$fontname\"><img src=\"images/lang-de.png\" /></label><br /><input type=\"radio\" name=\"lang\" id=\"lang-de\" value=\"de\"/><label for=\"lang-de\"> Deutsch</label><br /></div>";
+          ?>
         </div>
     		<div id="features" class="segment">
           3
