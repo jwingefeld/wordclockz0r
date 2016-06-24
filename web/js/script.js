@@ -9,7 +9,7 @@ function switchto(num) {
 function submitform() {
   $("#message").html("This be takin some tiemz and i am le-tired.")
   filelink = "<a href=\"../openscad/lasercut.zip\">aaa</a>";
-  window.setTimeout('$("#message").html("Here is your file: <br /><a href=../openscad/lasercut.zip><input type=button class=button value=lasercut.zip /></a>");',3000);
+  window.setTimeout('$("#message").html("Here is your file: <br /><a href=../openscad/lasercut.zip><input type=button class=hugebutton  value=lasercut.zip /></a>");',3000);
 
 }
 function checkfields() {

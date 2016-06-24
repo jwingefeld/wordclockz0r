@@ -29,10 +29,10 @@
           <input type="button" class="button" onclick="switchto(1);" value="ok, cool" />
         </div>
     		<div id="font" class="segment">
-          <div class="title">Please select the font of your wordclock:</div>
+          <div class="title">Please select the font of your wordclock:</div><br />
           <?php
-          for ($i=0;$i <= 5; $i++) {
-            echo "<div class=\"option\"><label for=\"font-$i\"><img src=\"images/lang-$i.png\" /></label><br /><input type=\"radio\" name=\"font\" id=\"font-$i\" value=\"$i\"/><label for=\"font-$i\"></label><br /></div>";
+          for ($i=0;$i <= 4; $i++) {
+            echo "<div class=\"option\"><label for=\"font-$i\"><img src=\"images/font-$i.png\" /></label><br /><input type=\"radio\" name=\"font\" id=\"font-$i\" value=\"$i\"/><label for=\"font-$i\"></label><br /></div>";
           }
           ?>
         </div>
